@@ -51,12 +51,7 @@ namespace Knight_Tour
         // Huszárvándorlás indítása.
         private void BtnGo_Click(object sender, RoutedEventArgs e)
         {
-            int x, y;
-
-            x = (display.startPos & 0x07);
-            y = (display.startPos >> 3);
-
-            csiko = new Csiko(x, y);
+            csiko = new Csiko((display.startPos & 0x07), (display.startPos >> 3));
             csikoLepesek = csiko.UjLepes();
             display.Reset(display.startPos);
 
