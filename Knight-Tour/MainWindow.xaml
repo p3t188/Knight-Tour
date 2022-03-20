@@ -1,0 +1,32 @@
+﻿<Window x:Class="Knight_Tour.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Knight_Tour"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        Title="Knight Tour" Height="450" Width="600" Icon="/images/knight.png">
+    <WrapPanel>
+        <Canvas Margin="5" x:Name="GameArea" Width="400" Height="400"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Margin="5" Content="Start" />
+            <Button x:Name="btnGo" Grid.Column="1" Grid.Row="0" Margin="5" Width="50" Height="25" Content="Gyiá" Click="BtnGo_Click"/>
+            <Label Grid.Column="0" Grid.Row="1" Margin="5" Content="Lassítás"/>
+            <Slider x:Name="slSpeed" Grid.Column="1" Grid.Row="1" Margin="5" Width="100" Height="25"/>
+            <Label x:Name="lMessage" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="5" Content="Huszárvándorlás" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" />
+            <DataGrid VerticalAlignment="Bottom" Margin="5" Name="dgSteps" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" HeadersVisibility="None" CanUserAddRows="False" CanUserReorderColumns="False" IsEnabled="False"/>
+        </Grid>
+    </WrapPanel>
+</Window>
